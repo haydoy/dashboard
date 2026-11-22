@@ -22,6 +22,9 @@ Built with plain HTML/CSS/JavaScript – no build step, no dependencies, no API 
   - **Clear done** to remove all finished tasks
   - Tasks are stored locally in your browser (localStorage)
 
+  TEKOÄLYN KÄYTTÖ
+  Käytin projectissa GPT 5.1 mallia ongelmanratkonnassa, sekä claude opus 5.5 koodin tekemisessä.
+
 ## Project structure
 
 ```text
@@ -47,3 +50,5 @@ dashboard/
     └── pages/
         ├── home.js        # Home page: top to‑dos, weather, kitesurf card
         └── todos.js       # To‑Do page: form, list, filters
+
+
