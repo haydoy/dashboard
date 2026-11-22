@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1 class="brand" id="app-title">My Dashboard</h1>
+    <nav class="nav">
+      <a href="#/home" data-route="#/home">Home</a>
+      <a href="#/todos" data-route="#/todos">To-Do</a>
+    </nav>
+  </header>
+
+  <main id="app" class="container"></main>
+
+  <!-- ⚠️ Load order: config → utils/storage → services → components → pages → router → app -->
+  <script src="js/config.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/storage.js"></script>
+
+  <script src="js/services/todos.js"></script>
+  <script src="js/services/location.js"></script>
+  <script src="js/services/weather.js"></script>
+  <script src="js/services/notifications.js"></script>
+
+  <script src="js/components/todoItem.js"></script>
+
+  <script src="js/pages/home.js"></script>
+  <script src="js/pages/todos.js"></script>
+
+  <script src="js/router.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+/* ========== THEME (change colors here) ========== */
+:root {
+  --bg: #f4f6fb;
+  --surface: #ffffff;
+  --text: #1d2433;
+  --muted: #6b7385;
+  --border: #e3e7ef;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --success: #16a34a;
+  --success-bg: #e8f8ee;
+  --warning: #d97706;
+  --warning-bg: #fff7e6;
+  --danger: #dc2626;
+  --radius: 14px;
+  --shadow: 0 1px 3px rgba(16, 24, 40, .06), 0 4px 12px rgba(16, 24, 40, .05);
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.5; }
+
+/* ========== LAYOUT ========== */
+.topbar {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .75rem 1.25rem; background: var(--surface); border-bottom: 1px solid var(--border);
+}
+.brand { font-size: 1.15rem; margin: 0; }
+.nav { display: flex; gap: .25rem; }
+.nav a { padding: .45rem .9rem; border-radius: 999px; color: var(--muted); text-decoration: none; font-weight: 500; }
+.nav a:hover { background: var(--bg); color: var(--text); }
+.nav a.active { background: var(--primary); color: #fff; }
+
+.container { max-width: 960px; margin: 0 auto; padding: 1.5rem 1.25rem 3rem; }
+.page-header { margin-bottom: 1.25rem; }
+.page-header h2 { margin: 0 0 .15rem; font-size: 1.6rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+
+/* ========== UTILITIES ========== */
+.muted { color: var(--muted); }
+.small { font-size: .85rem; }
+.hidden { display: none !important; }
+.error { color: var(--danger); }
+.empty { text-align: center; color: var(--muted); padding: 1.5rem 1rem; list-style: none; }
+.link { color: var(--primary); text-decoration: none; font-weight: 500; font-size: .9rem; }
+.link:hover { text-decoration: underline; }
+
+/* ========== CARDS ========== */
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: .75rem; }
+.card-header h3 { margin: 0; font-size: 1.05rem; }
+.card-footer { display: flex; justify-content: space-between; align-items: center; gap: .5rem; margin-top: 1rem; flex-wrap: wrap; }
+
+/* ========== BUTTONS ========== */
+.btn { font: inherit; border: 1px solid transparent; border-radius: 10px; padding: .55rem 1rem; cursor: pointer; font-weight: 500; }
+.btn:disabled { opacity: .6; cursor: default; }
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-primary:hover { background: var(--primary-hover); }
+.btn-ghost { background: transparent; border-color: var(--border); color: var(--text); }
+.btn-ghost:hover { background: var(--bg); }
+.btn-small { padding: .3rem .7rem; font-size: .85rem; }
+.btn-group { display: inline-flex; gap: .35rem; }
+.icon-btn { background: none; border: none; cursor: pointer; font-size: 1rem; padding: .35rem; border-radius: 8px; line-height: 1; }
+.icon-btn:hover { background: var(--bg); }
+.icon-btn:disabled { opacity: .4; cursor: default; }
+
+/* ========== KITESURF CARD ========== */
+.kite-card { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap; }
+.kite-card h3 { margin: 0; }
+.kite-card p { margin: .15rem 0 0; }
+.kite-icon { font-size: 2.2rem; }
+.kite-text { flex: 1; min-width: 200px; }
+.kite-go { background: var(--success-bg); border-color: #a7e3bd; }
+.kite-go h3 { color: var(--success); }
+.kite-warn { background: var(--warning-bg); border-color: #f5d08a; }
+.kite-warn h3 { color: var(--warning); }
+
+/* ========== WEATHER ========== */
+.weather-main { display: flex; align-items: center; gap: 1rem; margin: .5rem 0 1rem; }
+.weather-icon { font-size: 3rem; line-height: 1; }
+.temp { font-size: 2rem; font-weight: 700; line-height: 1.1; }
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; margin: 0; }
+.stats div { background: var(--bg); border-radius: 10px; padding: .5rem .7rem; }
+.stats dt { font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .03em; }
+.stats dd { margin: 0; font-weight: 600; }
+
+/* ========== TO-DOS (base) ========== */
+.todo-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .5rem; }
+.todo-item {
+  display: flex; align-items: center; gap: .75rem; padding: .75rem .9rem;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+}
+.home-todos .todo-item { background: var(--bg); border-color: transparent; }
+.todo-check { width: 1.15rem; height: 1.15rem; cursor: pointer; accent-color: var(--primary); flex-shrink: 0; }
+.todo-body { flex: 1; min-width: 0; }
+.todo-title { display: block; font-weight: 500; overflow-wrap: anywhere; }
+.todo-meta { display: flex; gap: .5rem; align-items: center; margin-top: .2rem; font-size: .8rem; flex-wrap: wrap; }
+.todo-item.completed { opacity: .65; }
+.todo-item.completed .todo-title { text-decoration: line-through; color: var(--muted); }
+.todo-actions { display: flex; gap: .15rem; }
+
+.badge { background: var(--badge-color, #888); color: #fff; padding: .05rem .5rem; border-radius: 999px; font-weight: 600; font-size: .72rem; }
+.deadline-overdue { color: var(--danger); font-weight: 600; }
+.deadline-soon { color: var(--warning); font-weight: 600; }
+.deadline-normal, .deadline-none { color: var(--muted); }
+
+.toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: .75rem; gap: .5rem; flex-wrap: wrap; }
+.filters { display: flex; gap: .35rem; flex-wrap: wrap; }
+.chip {
+  font: inherit; font-size: .85rem; border: 1px solid var(--border); background: var(--surface);
+  padding: .3rem .8rem; border-radius: 999px; cursor: pointer; color: var(--muted);
+}
+.chip.active { background: var(--text); border-color: var(--text); color: #fff; }
+
+/* ========== TO-DO v2: DESCRIPTION, STATUS & FORM ========== */
+
+/* List items */
+.todo-item { align-items: flex-start; }
+.todo-check { margin-top: .2rem; }
+.todo-full { border-left: 4px solid var(--status-color, var(--border)); }
+
+.todo-desc {
+  margin: .3rem 0 0; color: var(--muted); font-size: .9rem; line-height: 1.45;
+  white-space: pre-wrap; overflow-wrap: anywhere;
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden;
+}
+.todo-compact .todo-desc { -webkit-line-clamp: 2; }
+.todo-full .todo-desc { cursor: pointer; }
+.todo-desc.expanded { display: block; -webkit-line-clamp: unset; overflow: visible; }
+
+.status-pill { color: var(--status-color); font-weight: 600; }
+.start-date { color: var(--muted); }
+.todo-meta { margin-top: .4rem; }
+
+/* Status switch (Waiting | In progress | Done) */
+.status-switch {
+  display: inline-flex; flex-wrap: wrap; margin-top: .6rem;
+  border: 1px solid var(--border); border-radius: 999px; overflow: hidden;
+}
+.status-btn {
+  font: inherit; font-size: .78rem; background: var(--surface); color: var(--muted);
+  border: none; padding: .3rem .75rem; cursor: pointer;
+}
+.status-btn + .status-btn { border-left: 1px solid var(--border); }
+.status-btn:hover { background: var(--bg); color: var(--text); }
+.status-btn.active { background: var(--status-color); color: #fff; font-weight: 600; }
+
+/* Form */
+.todo-form {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: .75rem; margin-bottom: 1rem;
+}
+.todo-form.editing { border-color: var(--primary); box-shadow: 0 0 0 2px rgba(37, 99, 235, .15); }
+.todo-form h3 { grid-column: 1 / -1; margin: 0; font-size: 1.05rem; }
+.field { display: flex; flex-direction: column; gap: .3rem; font-size: .8rem; font-weight: 600; color: var(--muted); }
+.field-full { grid-column: 1 / -1; }
+.optional { font-weight: 400; font-style: normal; }
+.todo-form input, .todo-form select, .todo-form textarea {
+  width: 100%; font: inherit; font-size: .95rem; font-weight: 400; color: var(--text);
+  padding: .55rem .7rem; border: 1px solid var(--border); border-radius: 10px; background: var(--surface);
+}
+.todo-form textarea { resize: vertical; min-height: 84px; line-height: 1.45; }
+.todo-form textarea:focus { outline: 2px solid var(--primary); outline-offset: -1px; }
+.char-count { align-self: flex-end; font-weight: 400; }
+.form-actions { display: flex; justify-content: flex-end; gap: .5rem; }
+#form-error { margin: 0; }
